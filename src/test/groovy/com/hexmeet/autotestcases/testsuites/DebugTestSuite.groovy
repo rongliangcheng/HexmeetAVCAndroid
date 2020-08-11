@@ -21,7 +21,7 @@ import org.junit.runners.Suite
 
 //            OperateInAGuestCall
 //         GuestCall
-        OperateReserveMeeting
+//        OperateReserveMeeting
 //        InviteParticipantInMeetingControl
 //        PostponeMeetingInMeetingControl
 //        LockMeetingInMeetingControl
