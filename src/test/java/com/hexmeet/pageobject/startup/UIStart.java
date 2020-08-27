@@ -17,6 +17,7 @@ public class UIStart {
         Pause.stop(1);
 
         appiumDriver.findElementById("android:id/button1").click();
+
     }
 
 }
