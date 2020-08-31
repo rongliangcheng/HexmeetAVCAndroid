@@ -75,7 +75,7 @@ class LongCall extends EndpointSystemTestSpec{
         reserveMeetingPage.navigate()
         reserveMeetingPage.now();
         reserveMeetingPage.changeDuration();
-        reserveMeetingPage.addParticipants("hjtautotest2")
+        reserveMeetingPage.addParticipants("RongliangVE210")
         reserveMeetingPage.finish();
         reserveMeetingPage.backAfterReserver()
         meetingOperations = new MeetingOperations(appiumDriver)

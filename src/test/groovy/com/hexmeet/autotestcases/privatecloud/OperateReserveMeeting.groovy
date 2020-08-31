@@ -102,7 +102,7 @@ class OperateReserveMeeting extends EndpointSystemTestSpec {
         reserveMeetingPage.navigate()
         Pause.stop(5);
         //reserveMeetingPage.now();
-        reserveMeetingPage.addParticipants("hjtautotest2");
+        reserveMeetingPage.addParticipants("RongliangVE210");
         reserveMeetingPage.finish();
         reserveMeetingPage.backAfterReserver()
         showPicInReportPortrait(appiumDriver,"预约会议成功")

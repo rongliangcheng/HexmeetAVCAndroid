@@ -58,7 +58,7 @@ class OperateInAReservedMeeting extends EndpointSystemTestSpec{
         ReserveMeetingPage reserveMeetingPage = new ReserveMeetingPage(appiumDriver);
         reserveMeetingPage.navigate()
         reserveMeetingPage.now();
-        reserveMeetingPage.addParticipants("hjtautotest2");
+        reserveMeetingPage.addParticipants("RongliangVE210");
         reserveMeetingPage.finish();
         reserveMeetingPage.backAfterReserver()
 

@@ -84,7 +84,7 @@ class InviteParticipantInMeetingControl extends EndpointSystemTestSpec{
         when:"查找与会者"
         //LOGGER.info("Mute audio")
         Pause.stop(3)
-        meetingOperations.inviteParticipantInAMeeting("hjtautotest2")
+        meetingOperations.inviteParticipantInAMeeting("RongliangVE210")
         Pause.stop(2)
         showPicInReport(appiumDriver,"成功邀请与会者")
 

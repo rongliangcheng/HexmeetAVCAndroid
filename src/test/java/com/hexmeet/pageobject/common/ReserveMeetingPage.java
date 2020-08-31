@@ -22,7 +22,7 @@ public class ReserveMeetingPage {
     Logger logger = getLogger("ReserveMeetingPage");
 
     private AppiumDriver appiumDriver;
-    private String meetingControlXpathBase="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/";
+
     private String reserverPageXpathBase="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/";
 
     ReserveMeetingPage(AppiumDriver appiumDriver) throws ClassNotFoundException {
@@ -47,7 +47,7 @@ public class ReserveMeetingPage {
         logger.info("Choose now checkbox");
         Pause.stop(0.5);
         //Used for OPPO
-        //appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View[1]").click();
+        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View[1]").click();
         //Used for VIVO
         //appiumDriver.findElementByXPath("//android.webkit.WebView[@content-desc=\"会捷通\"]/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.view.View[1]").click();
         //Used for xiaomi
@@ -123,7 +123,7 @@ public class ReserveMeetingPage {
         appiumDriver.getKeyboard().sendKeys(Keys.RETURN);
         //bug: need to click several times
         Pause.stop(1);
-        //appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
+        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View[1]/android.view.View[1]").click();
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View[1]/android.view.View[1]").click();
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View[1]/android.view.View[1]").click();
@@ -160,11 +160,11 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[7]/android.widget.Button[1]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[1]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
     }
 
     public void postPoneMeeting(String username){
@@ -173,11 +173,11 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[7]/android.widget.Button[2]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[2]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
     }
 
 
@@ -187,11 +187,11 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[7]/android.widget.Button[3]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[3]").click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
     }
 
     private String findReservedMeetingXpath(String meetingOwner){
@@ -202,12 +202,12 @@ public class ReserveMeetingPage {
 //        Point pointEnd = new Point(300,400);
 //        touchAction.press(PointOption.point(pointStart)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(pointEnd)).perform();
         Pause.stop(1);
-        //appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View").click();
-        //appiumDriver.findElementByXPath(meetingControlXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View[-1]/android.view.View[4]/android.widget.ListView/android.view.View").click();
+        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View").click();
+        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[-1]/android.view.View[4]/android.widget.ListView/android.view.View").click();
 
         String preStr=reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[3]/android.view.View[";
         String appendixStr="]/android.view.View/android.widget.ListView/android.view.View/android.view.View[3]";
-        String onlyOneItemXpath=meetingControlXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View/android.view.View[3]";
+        String onlyOneItemXpath=reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View/android.view.View[3]";
         String xpath="";
 
         if(UIElement.byElementIsExist(appiumDriver,By.xpath(onlyOneItemXpath)) && appiumDriver.findElementByXPath(onlyOneItemXpath).getText().contains(meetingOwner)){

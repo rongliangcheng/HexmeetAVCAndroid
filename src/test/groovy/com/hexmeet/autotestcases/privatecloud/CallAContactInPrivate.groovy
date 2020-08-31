@@ -81,7 +81,7 @@ class CallAContactInPrivate extends EndpointSystemTestSpec{
 
         and:"在公司的组织架构中找到用户"
         CallAContactInStructure callAContactInStructure = new CallAContactInStructure(appiumDriver)
-        callAContactInStructure.findAContactInStructure("hjtautotest2")
+        callAContactInStructure.findAContactInStructure("RongliangVE210")
         Pause.stop(3)
         showPicInReportPortrait(appiumDriver,"找到用户");
 
