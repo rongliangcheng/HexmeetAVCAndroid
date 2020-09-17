@@ -117,6 +117,8 @@ public class ReserveMeetingPage {
         Pause.stop(0.5);
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[5]/android.view.View[2]/android.view.View").click();
         Pause.stop(3);
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[3]/android.view.View[1]/android.view.View").click();
+        Pause.stop(1);
         //input accout and enter
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText").sendKeys(name);
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View/android.widget.EditText").click();
