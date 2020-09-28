@@ -14,7 +14,7 @@
     "appPackage": "com.hexmeet.hjt",
     "appActivity": ".SplashActivity",
     "skipServerInstallation": true,
-    "skipDeviceInitialization":true,
+    "skipDeviceInitialization":true
   },
   "Android_2": {
     "platformName": "Android",
