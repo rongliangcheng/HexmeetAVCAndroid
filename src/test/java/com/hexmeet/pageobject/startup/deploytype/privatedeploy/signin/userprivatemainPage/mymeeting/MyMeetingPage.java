@@ -72,7 +72,7 @@ public class MyMeetingPage {
         if(groupSelectionBoolean)
             groupSelection();
 
-        appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[6]/android.view.View[1]").click();
+        appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[5]/android.view.View[1]").click();
     }
 
     private void groupSelection(){
@@ -80,7 +80,7 @@ public class MyMeetingPage {
         Pause.stop(0.5);
         appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[4]/android.view.View[4]/android.view.View[2]/android.widget.Button").click();
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[6]/android.view.View/android.view.View[2]/android.widget.Button[1]").click();
+        appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[3]/android.view.View/android.widget.Button[1]").click();
 
         Pause.stop(0.5);
         //remove the group selection
