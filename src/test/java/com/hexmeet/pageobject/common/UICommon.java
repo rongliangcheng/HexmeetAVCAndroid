@@ -22,7 +22,7 @@ public class UICommon {
 
         //LOGGER.info("Allow permissions on device");
         Pause.stop(2);
-        appiumDriver.findElementById("android:id/button1").click();
+        appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
     }
 
     //Used to check the wrong input password operation

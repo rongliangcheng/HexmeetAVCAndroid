@@ -86,7 +86,7 @@ class SignIn extends EndpointSystemTestSpec{
         signInPage.submit(serverAddr,signInUserName,signInPassword)
 
         Pause.stop(4)
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
         Pause.stop(1)
         showPicInReportPortrait(appiumDriver,"登录界面")
@@ -112,7 +112,7 @@ class SignIn extends EndpointSystemTestSpec{
         signInPage.submit(serverAddr,signInUserName,signInPassword,PORT,false)
 
         Pause.stop(4)
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
         Pause.stop(1)
         showPicInReportPortrait(appiumDriver,"登录界面")
@@ -165,7 +165,7 @@ class SignIn extends EndpointSystemTestSpec{
         showPicInReportPortrait(appiumDriver,"用户名或密码错误")
 
         Pause.stop(4)
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
 
         boolean isOnSignInPage = signInPage.isOnSignInPage()
@@ -237,7 +237,7 @@ class SignIn extends EndpointSystemTestSpec{
         signInPage.submit(serverAddr,signInUserName,signInPassword)
 
         Pause.stop(4)
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
 
         Pause.stop(4)

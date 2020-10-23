@@ -42,7 +42,7 @@ public class PrivateDirectJoinAMeetingPage {
         appiumDriver.findElementById("com.hexmeet.hjt:id/login_btn").click();
 
         Pause.stop(0.5);
-        if(UIElement.byElementIsExist(appiumDriver,By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver,By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
     }
 

@@ -32,7 +32,7 @@ public class SignInPage {
 
         Pause.stop(0.5);
 
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
     }
 
@@ -56,7 +56,7 @@ public class SignInPage {
 
         Pause.stop(0.5);
 
-        if(UIElement.byElementIsExist(appiumDriver, By.id("android:id/button1")))
+        if(UIElement.byElementIsExist(appiumDriver, By.id("com.lbe.security.miui:id/permission_allow_foreground_only_button")))
             UICommon.devicePermissionAllowance(appiumDriver);
     }
 
