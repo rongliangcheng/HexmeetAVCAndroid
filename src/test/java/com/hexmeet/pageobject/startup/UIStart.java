@@ -16,7 +16,7 @@ public class UIStart {
 
         Pause.stop(1);
 
-        appiumDriver.findElementById("android:id/button1").click();
+        appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
 
     }
 

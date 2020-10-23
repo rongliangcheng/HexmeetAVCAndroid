@@ -11,11 +11,11 @@ public class UICommon {
         //logger.info("Allow permissions on device");
         Pause.stop(2);
 
-        appiumDriver.findElementById("android:id/button1").click();
+        appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
         Pause.stop(1);
-        appiumDriver.findElementById("android:id/button1").click();
+        appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
         Pause.stop(1);
-        appiumDriver.findElementById("android:id/button1").click();
+        appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_button_1").click();
     }
 
     public static void devicePermissionAllowanceOnce(final AppiumDriver appiumDriver) {
