@@ -24,12 +24,12 @@ import org.junit.runners.Suite
 //        AppVersion,
 //        SignIn,
 //        GuestCall,
-//        OperateInAGuestCall,
+        OperateInAGuestCall,
 //        CallAContactInPrivate,
-        JoinAReserveMeeting,
+//        JoinAReserveMeeting,
 //        OperateReserveMeeting,
 //        PostponeMeetingInMeetingControl,
-//        LockMeetingInMeetingControl,
+//        LockMeetingInMeetingControl
 //        OperateInAReservedMeeting,
 //        JoinMyMeetingInPrivate
 ])
