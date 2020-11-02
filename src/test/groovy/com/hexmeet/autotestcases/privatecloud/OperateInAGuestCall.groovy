@@ -122,14 +122,14 @@ class OperateInAGuestCall extends EndpointSystemTestSpec{
         assert true
     }
 
-    def "共享桌面取消"(){
-        when:"点击共享桌面按钮然后取消"
-        LOGGER.info("Share content and cancel")
-        meetingOperations.shareContentAndCancel()
-
-        then:"操作成功"
-        assert true
-    }
+//    def "共享桌面取消"(){
+//        when:"点击共享桌面按钮然后取消"
+//        LOGGER.info("Share content and cancel")
+//        meetingOperations.shareContentAndCancel()
+//
+//        then:"操作成功"
+//        assert true
+//    }
 
  //   def "Share content and stop content"(){
 
