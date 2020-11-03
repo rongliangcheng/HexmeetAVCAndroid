@@ -72,7 +72,7 @@ class CallAContactInPrivate extends EndpointSystemTestSpec{
     def "呼叫组织架构中的用户"(){
         when:"初始化并登录"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_1")
-        androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS)
+        androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
         UserPrivateMainPage userPrivateMainPage = new UserPrivateMainPage(appiumDriver)
