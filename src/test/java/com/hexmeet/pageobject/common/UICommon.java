@@ -23,10 +23,6 @@ public class UICommon {
         //LOGGER.info("Allow permissions on device");
         Pause.stop(2);
         appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
-        Pause.stop(2);
-        if(appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").isDisplayed())
-            appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").click();
-
     }
 
     //Used to check the wrong input password operation
