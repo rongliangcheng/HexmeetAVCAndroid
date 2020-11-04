@@ -16,8 +16,8 @@ public class UIStart {
         Pause.stop(1);
         appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
         Pause.stop(1);
-        if(appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").isDisplayed())
-            appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").click();
+//        if(appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").isDisplayed())
+//            appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").click();
     }
 
 }
