@@ -15,9 +15,9 @@ public class UIStart {
         appiumDriver.findElementById("com.hexmeet.hjt:id/dialog_ok").click();
         Pause.stop(1);
         appiumDriver.findElementById("com.lbe.security.miui:id/permission_allow_foreground_only_button").click();
-        Pause.stop(1);
-        if(appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").isDisplayed())
-            appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").click();
+//        Pause.stop(1);
+//        if(appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").isDisplayed())
+//            appiumDriver.findElementById("com.hexmeet.hjt:id/version_cancel").click();
     }
 
 }
