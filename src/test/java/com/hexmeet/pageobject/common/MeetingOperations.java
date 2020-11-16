@@ -109,15 +109,15 @@ public class MeetingOperations {
         touchScreenToShowButton();
         appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_chat").click();
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.EditText").sendKeys(string);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.Button").click();
+        appiumDriver.findElementById("com.hexmeet.hjt:id/et_input").sendKeys(string);
+        appiumDriver.findElementById("com.hexmeet.hjt:id/btn_send").click();
 
     }
 
     public void returnFromSendMessage(){
         logger.info("");
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.ImageView").click();
+        appiumDriver.findElementById("com.hexmeet.hjt:id/chat_back_btn").click();
     }
 
     public void switchLayout(){

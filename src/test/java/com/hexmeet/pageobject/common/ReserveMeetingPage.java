@@ -126,9 +126,9 @@ public class ReserveMeetingPage {
         //bug: need to click several times
         Pause.stop(1);
         //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View[1]/android.view.View[1]").click();
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View[1]/android.view.View[1]").click();
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View[1]/android.view.View[1]").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[4]/android.view.View/android.view.View").click();
         //OK
         Pause.stop(0.5);
         appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[5]/android.view.View[2]").click();
