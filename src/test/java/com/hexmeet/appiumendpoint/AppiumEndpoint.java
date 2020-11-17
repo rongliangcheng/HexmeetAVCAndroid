@@ -44,29 +44,38 @@ public class AppiumEndpoint {
         }
     };
 
-    //Initial Appium Endpoint from config.json file
+    public String getDeviceSN(String fileName, String keyword){
+        JSONObject jsonObject = getJSONObjectFromFile(fileName);
+        return jsonObject.getJSONObject(keyword).getString("deviceName");
+    }
 
-    private void setAppiumCapabilities(String fileName,String keyword){
+    //Initial Appium Endpoint from config.json file
+    private JSONObject getJSONObjectFromFile(String fileName) {
         log.info("Initial Appium endpoint from config.json");
-        File file=new File(AppiumEndpoint.class.getClassLoader().getResource(fileName).getPath());
+        JSONObject jsonObject=null;
+        File file = new File(AppiumEndpoint.class.getClassLoader().getResource(fileName).getPath());
         try {
             String content = FileUtils.readFileToString(file, "UTF-8");
             log.info(content);
-            JSONObject jsonObject = JSONObject.parseObject(content);
-
-            Set<String> keySet = jsonObject.getJSONObject(keyword).keySet();
-
-            for(String key: keySet){
-                log.info("set capacity of "+key);
-                capabilities.setCapability(key,jsonObject.getJSONObject(keyword).getString(key));
-            }
-
-        }catch (IOException e){
+            jsonObject = JSONObject.parseObject(content);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
-
+        return jsonObject;
     }
+
+    private void setAppiumCapabilities(String fileName,String keyword){
+        JSONObject jsonObject = getJSONObjectFromFile(fileName);
+        Set<String> keySet = jsonObject.getJSONObject(keyword).keySet();
+        for(String key: keySet){
+            log.info("set capacity of "+key);
+            capabilities.setCapability(key,jsonObject.getJSONObject(keyword).getString(key));
+        }
+    }
+
+
+
+
 
     public AppiumDriver getAppiumEndpointDriver(){
         return appiumDriver;

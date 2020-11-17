@@ -1,5 +1,6 @@
 package com.hexmeet.autotestcases.testsuites
 
+import com.hexmeet.autotestcases.privatecloud.AndroidOp
 import com.hexmeet.autotestcases.privatecloud.AppVersion
 import com.hexmeet.autotestcases.privatecloud.CallAContactInPrivate
 import com.hexmeet.autotestcases.privatecloud.GuestCall
@@ -17,19 +18,18 @@ import org.junit.runners.Suite
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses([
-            AppVersion,
-            SignIn,
-            GuestCall,
-            OperateInAGuestCall,
-            CallAContactInPrivate,
-            JoinAReserveMeeting,
-            OperateReserveMeeting,
-            PostponeMeetingInMeetingControl,
-            LockMeetingInMeetingControl,
-            OperateInAReservedMeeting,
-            JoinMyMeetingInPrivate
-//        LoginWithWrongPassword,
-//        LoginWithWrongUsername
+        AndroidOp,
+        AppVersion,
+        SignIn,
+        GuestCall,
+        OperateInAGuestCall,
+        CallAContactInPrivate,
+        JoinAReserveMeeting,
+        OperateReserveMeeting,
+        PostponeMeetingInMeetingControl,
+        LockMeetingInMeetingControl,
+        OperateInAReservedMeeting,
+        JoinMyMeetingInPrivate
 ])
 
 class PrivateCloudTestSuite {
