@@ -28,8 +28,8 @@ import org.junit.runners.Suite
         OperateReserveMeeting,
         PostponeMeetingInMeetingControl,
         LockMeetingInMeetingControl,
-        OperateInAReservedMeeting,
-        JoinMyMeetingInPrivate
+        JoinMyMeetingInPrivate,
+        OperateInAReservedMeeting
 ])
 
 class PrivateCloudTestSuite {
