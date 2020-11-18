@@ -122,33 +122,6 @@ class OperateInAGuestCall extends EndpointSystemTestSpec{
         assert true
     }
 
-    def "共享桌面取消"(){
-        when:"点击共享桌面按钮然后取消"
-        LOGGER.info("Share content and cancel")
-        meetingOperations.shareContentAndCancel()
-
-        then:"操作成功"
-        assert true
-    }
-
-
-    def "共享桌面然后停止"(){
-        when: "点击共享桌面并分享"
-        LOGGER.info("Share content")
-        meetingOperations.shareContent()
-        Pause.stop(2)
-        showPicInReportPortrait(appiumDriver,"共享桌面")
-        Pause.stop(20)
-
-        and: "停止分享"
-        LOGGER.info("Stop content")
-        meetingOperations.stopContent()
-        Pause.stop(2)
-        showPicInReport(appiumDriver,"停止共享桌面")
-
-        then:"操作成功"
-        assert  true
-    }
 
     def "聊天"(){
         when: "发送聊天消息"
@@ -226,6 +199,34 @@ class OperateInAGuestCall extends EndpointSystemTestSpec{
         then:"操作成功"
         assert true
     }
+
+    def "共享桌面然后停止"(){
+        when: "点击共享桌面并分享"
+        LOGGER.info("Share content")
+        meetingOperations.shareContent()
+        Pause.stop(2)
+        showPicInReportPortrait(appiumDriver,"共享桌面")
+        Pause.stop(20)
+
+        and: "停止分享"
+        LOGGER.info("Stop content")
+        meetingOperations.stopContent()
+        Pause.stop(2)
+        showPicInReport(appiumDriver,"停止共享桌面")
+
+        then:"操作成功"
+        assert  true
+    }
+
+    def "共享桌面取消"(){
+        when:"点击共享桌面按钮然后取消"
+        LOGGER.info("Share content and cancel")
+        meetingOperations.shareContentAndCancel()
+
+        then:"操作成功"
+        assert true
+    }
+
 
     def "挂断并结束会议"(){
         when:"挂断并结束会议"
