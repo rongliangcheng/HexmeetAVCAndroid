@@ -7,6 +7,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
+import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.Point;
@@ -22,6 +23,14 @@ public class ReserveMeetingPage {
     Logger logger = getLogger("ReserveMeetingPage");
 
     private AppiumDriver appiumDriver;
+
+
+    private String userNameInMeeting = "com.hexmeet.hjt:id/name_dialog";
+    private String videoJoin = "com.hexmeet.hjt:id/video_btn";
+    private String audioJoin = "com.hexmeet.hjt:id/audio_btn";
+    private String camera_switch = "com.hexmeet.hjt:id/close_camera_switch";
+    private String mic_switch = "com.hexmeet.hjt:id/close_mic_switch";
+
 
     private String reserverPageXpathBase="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/";
 
@@ -232,12 +241,10 @@ public class ReserveMeetingPage {
         appiumDriver.findElementByXPath(xpath).click();
     }
 
-    public void joinReservedMeeting(String meetingOwner){
+    public void joinReservedMeeting(String meetingOwner, boolean videoCall, boolean cameraMute, boolean micMute){
         logger.info("Join the reserved meeting");
         findReservedMeeting(meetingOwner);
-// Try to use coordinate to locate the element
-//        Point pointItem = new Point(300,1900);
-//        touchAction.press(PointOption.point(pointItem)).release().perform();
+
         Pause.stop(3);
 
         String joinMeetingButton1=reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[5]/android.view.View[1]";
@@ -247,6 +254,21 @@ public class ReserveMeetingPage {
         }else if (UIElement.byElementIsExist(appiumDriver,By.xpath(joinMeetingButton1))){
             appiumDriver.findElementByXPath(joinMeetingButton1).click();
         }
+
+        if(cameraMute){
+            appiumDriver.findElementById(camera_switch).click();
+        }
+
+        if(!micMute){
+            appiumDriver.findElementById(mic_switch).click();
+        }
+
+        if(videoCall){
+            appiumDriver.findElementById(videoJoin).click();
+        } else {
+            appiumDriver.findElementById(audioJoin).click();
+        }
+
 
     }
 

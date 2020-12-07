@@ -70,12 +70,14 @@ class CallAContactInPrivate extends EndpointSystemTestSpec{
 
     @Retry(delay = 30000)
     def "呼叫组织架构中的用户"(){
-        when:"初始化并登录"
+        given:"初始化"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_1")
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
-
+        MeetingOperations meetingOperate = new MeetingOperations(appiumDriver)
         UserPrivateMainPage userPrivateMainPage = new UserPrivateMainPage(appiumDriver)
+
+        when:"登录"
         userPrivateMainPage.navigate(serverAddress,accout,password)
         userPrivateMainPage.contacts()
 
@@ -89,10 +91,12 @@ class CallAContactInPrivate extends EndpointSystemTestSpec{
         callAContactInStructure.callTheContact()
         Pause.stop(5)
         showPicInReport(appiumDriver,"呼叫用户");
-        Pause.stop(30)
+        Pause.stop(15)
+        boolean inMeeting = meetingOperate.isInMeetingPage()
+        meetingOperate.hangupAndTerminateCall()
 
         then:"呼叫成功"
-        assert  new MeetingOperations(appiumDriver).isInMeetingPage()
+        assert  inMeeting
     }
 
 
