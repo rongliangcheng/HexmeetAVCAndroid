@@ -34,6 +34,23 @@ public class ReserveMeetingPage {
 
     private String reserverPageXpathBase="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/";
 
+    //会议控制
+    private final String meeting_control_base   =   "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[4]/";
+    private final String invite_others          =   meeting_control_base+"android.view.View[1]";
+    private final String mute_all               =   meeting_control_base+"android.view.View[2]";
+    private final String unmute_all             =   meeting_control_base+"android.view.View[3]";
+    private final String meeting_control_more   =   meeting_control_base+"android.view.View[4]/android.view.View[2]";
+    private final String meeting_control_more_base   =   "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[7]/";
+    private final String allow_user_unmute  =   meeting_control_more_base+"android.view.View[1]";
+    private final String mute_when_join     =   meeting_control_more_base+"android.view.View[2]";
+    private final String lock_meeting       =   meeting_control_more_base+"android.view.View[3]";
+    private final String postpone_meeting   =   meeting_control_more_base+"android.view.View[4]";
+    private final String vote_xpath         =   meeting_control_more_base+"android.view.View[5]";
+
+    private final String return_from_meeting_control = reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View";
+
+
+
     ReserveMeetingPage(AppiumDriver appiumDriver) throws ClassNotFoundException {
         this.appiumDriver = appiumDriver;
     }
@@ -168,11 +185,11 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(meeting_control_more).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[1]").click();
+        appiumDriver.findElementByXPath(lock_meeting).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(return_from_meeting_control).click();
     }
 
     public void postPoneMeeting(String username){
@@ -181,11 +198,11 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(meeting_control_more).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[2]").click();
+        appiumDriver.findElementByXPath(postpone_meeting).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(return_from_meeting_control).click();
     }
 
 
@@ -195,23 +212,16 @@ public class ReserveMeetingPage {
         Pause.stop(3);
         goToMeetingControl();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]").click();
+        appiumDriver.findElementByXPath(meeting_control_more).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[7]/android.widget.Button[3]").click();
+        appiumDriver.findElementByXPath(vote_xpath).click();
         Pause.stop(2);
-        appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View[1]/android.view.View[1]/android.view.View/android.view.View").click();
+        appiumDriver.findElementByXPath(return_from_meeting_control).click();
     }
 
     private String findReservedMeetingXpath(String meetingOwner){
         logger.info("Find reserved meeting xpath");
-        Pause.stop(0.5);
-//        TouchAction touchAction = new TouchAction(appiumDriver);
-//        Point pointStart = new Point(300,1900);
-//        Point pointEnd = new Point(300,400);
-//        touchAction.press(PointOption.point(pointStart)).waitAction(WaitOptions.waitOptions(Duration.ofSeconds(1))).moveTo(PointOption.point(pointEnd)).perform();
         Pause.stop(1);
-        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View/android.widget.ListView/android.view.View").click();
-        //appiumDriver.findElementByXPath(reserverPageXpathBase+"android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[-1]/android.view.View[4]/android.widget.ListView/android.view.View").click();
 
         String preStr=reserverPageXpathBase+"android.view.View[1]/android.view.View/android.view.View[3]/android.view.View[";
         String appendixStr="]/android.view.View/android.widget.ListView/android.view.View/android.view.View[3]";
