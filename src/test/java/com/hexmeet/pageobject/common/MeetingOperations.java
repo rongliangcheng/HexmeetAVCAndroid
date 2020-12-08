@@ -22,9 +22,22 @@ public class MeetingOperations {
 
     private final String mainMeetingPage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.View[1]";
 
+
+    //会控 xpath
+    private final String meeting_control_more=  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[4]/android.view.View[4]/android.view.View[2]";
+
+    private final String meeting_control_base=  "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[5]";
+    private final String allow_user_unmute  =   meeting_control_base+"/android.view.View[1]";
+    private final String mute_when_join     =   meeting_control_base+"/android.view.View[2]";
+    private final String lock_meeting       =   meeting_control_base+"/android.view.View[3]";
+    private final String postpone_meeting   =   meeting_control_base+"/android.view.View[4]";
+    private final String vote_xpath         =   meeting_control_base+"/android.view.View[5]";
+
     public MeetingOperations(AppiumDriver appiumDriver) {
         this.appiumDriver = appiumDriver;
     }
+
+
 
     public void persistentCallHangupAndLeave(){
         logger.info("");
@@ -211,7 +224,7 @@ public class MeetingOperations {
         Pause.stop(1);
         appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[3]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[5]/android.widget.Button[1]").click();
+        appiumDriver.findElementByXPath(lock_meeting).click();
         Pause.stop(1);
         appiumDriver.findElementById("com.hexmeet.hjt:id/close_window").click();
     }
@@ -222,7 +235,7 @@ public class MeetingOperations {
         Pause.stop(1);
         appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[3]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[5]/android.widget.Button[1]").click();
+        appiumDriver.findElementByXPath(lock_meeting).click();
         Pause.stop(1);
         appiumDriver.findElementById("com.hexmeet.hjt:id/close_window").click();
     }
@@ -233,7 +246,7 @@ public class MeetingOperations {
         Pause.stop(1);
         appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[3]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(1);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[5]/android.widget.Button[2]").click();
+        appiumDriver.findElementByXPath(postpone_meeting).click();
         Pause.stop(1);
         appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[7]/android.view.View[2]").click();
         Pause.stop(1);
@@ -246,7 +259,7 @@ public class MeetingOperations {
         Pause.stop(1);
         appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[3]/android.view.View[4]/android.view.View[2]").click();
         Pause.stop(1);
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[5]/android.widget.Button[3]").click();
+        appiumDriver.findElementByXPath(vote_xpath).click();
         Pause.stop(1);
 //        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[2]/android.view.View/android.view.View[7]/android.view.View[2]").click();
 //        Pause.stop(1);
