@@ -91,7 +91,7 @@ class LockMeetingInMeetingControl extends EndpointSystemTestSpec{
          showPicInReportPortrait(appiumDriver, "创建新的会议")
 
          and: "入会"
-         reserveMeetingPage.joinReservedMeeting(username);
+         reserveMeetingPage.joinReservedMeeting(username,true,false,true);
          Pause.stop(10)
          meetingOperations = new MeetingOperations(appiumDriver)
          showPicInReport(appiumDriver, "入会")
@@ -110,7 +110,7 @@ class LockMeetingInMeetingControl extends EndpointSystemTestSpec{
 
         and: "尝试进入锁定会议"
         Pause.stop(4)
-        reserveMeetingPage.joinReservedMeeting(username);
+        reserveMeetingPage.joinReservedMeeting(username,true,false,true);
         Pause.stop(4)
         showPicInReportPortrait(appiumDriver, "未能入会")
 
@@ -125,7 +125,7 @@ class LockMeetingInMeetingControl extends EndpointSystemTestSpec{
 
         and:"再次入会"
         Pause.stop(4)
-        reserveMeetingPage.joinReservedMeeting(username);
+        reserveMeetingPage.joinReservedMeeting(username,true,false,true);
         Pause.stop(10)
         showPicInReport(appiumDriver,"入会")
 

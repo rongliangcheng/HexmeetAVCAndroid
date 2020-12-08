@@ -96,7 +96,7 @@ class LongCall extends EndpointSystemTestSpec{
     def "长时间呼叫"(){
         when:"呼叫"
         Pause.stop(2)
-        reserveMeetingPage.joinReservedMeeting(username);
+        reserveMeetingPage.joinReservedMeeting(username,true,false,true);
         Pause.stop(10)
 
         and:"收集cpu,memory信息"

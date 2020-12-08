@@ -122,7 +122,7 @@ class ShortCalls extends EndpointSystemTestSpec{
     def "短呼叫#counter"(){
         when:"呼叫"
         Pause.stop(2)
-        reserveMeetingPage.joinReservedMeeting(username);
+        reserveMeetingPage.joinReservedMeeting(username,true,false,true);
         Pause.stop(10)
 
         then:"呼叫成功"

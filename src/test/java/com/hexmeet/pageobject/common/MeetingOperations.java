@@ -20,6 +20,8 @@ public class MeetingOperations {
     private AppiumDriver appiumDriver;
     Logger logger = getLogger("MeetingOperations");
 
+    private final String mainMeetingPage="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/android.widget.RelativeLayout/android.view.View[1]";
+
     public MeetingOperations(AppiumDriver appiumDriver) {
         this.appiumDriver = appiumDriver;
     }
@@ -165,7 +167,7 @@ public class MeetingOperations {
     public String getDisplayName(){
         logger.info("");
         Pause.stop(1);
-        return appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout[2]/android.widget.LinearLayout/android.widget.TextView").getText();
+        return appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.TextView").getText();
     }
 
     //Meeting control operations
@@ -255,7 +257,7 @@ public class MeetingOperations {
     public boolean isInMeetingPage(){
         logger.info("");
         Pause.stop(0.5);
-        return UIElement.byElementIsExist(appiumDriver,xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.view.View[1]"));
+        return UIElement.byElementIsExist(appiumDriver,xpath(mainMeetingPage));
     }
 
     public boolean hasTwoParticipants(){
@@ -274,14 +276,13 @@ public class MeetingOperations {
 
     private void touchScreenToShowButton(){
         logger.info("");
-        String mainView="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.view.View[1]";
         if(!UIElement.byElementIsExist(appiumDriver,id("com.hexmeet.hjt:id/timer_chronometer"))){
-            appiumDriver.findElementByXPath(mainView).click();
+            appiumDriver.findElementByXPath(mainMeetingPage).click();
         } else {
             //LOGGER.info("Element existing");
-            appiumDriver.findElementByXPath(mainView).click();
+            appiumDriver.findElementByXPath(mainMeetingPage).click();
             Pause.stop(2);
-            appiumDriver.findElementByXPath(mainView).click();
+            appiumDriver.findElementByXPath(mainMeetingPage).click();
         }
     }
 

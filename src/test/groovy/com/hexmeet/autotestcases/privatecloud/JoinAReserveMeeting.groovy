@@ -86,7 +86,7 @@ class JoinAReserveMeeting extends EndpointSystemTestSpec {
         reserveMeetingPage.backAfterReserver()
 
         and:"加入预约会议"
-        reserveMeetingPage.joinReservedMeeting("hjtautotest1");
+        reserveMeetingPage.joinReservedMeeting("hjtautotest1",true,false,true);
         Pause.stop(30)
         showPicInReport(appiumDriver,"与会中")
 
@@ -117,7 +117,7 @@ class JoinAReserveMeeting extends EndpointSystemTestSpec {
         reserveMeetingPage.backAfterReserver()
 
         and:"加入会议"
-        reserveMeetingPage.joinReservedMeeting("hjtautotest1");
+        reserveMeetingPage.joinReservedMeeting("hjtautotest1",true,false,true);
         Pause.stop(30)
         showPicInReport(appiumDriver,"与会中")
 

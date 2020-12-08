@@ -13,7 +13,7 @@ import com.hexmeet.autotestcases.privatecloud.OperateReserveMeeting
 import com.hexmeet.autotestcases.privatecloud.PostponeMeetingInMeetingControl
 import com.hexmeet.autotestcases.privatecloud.ShortCalls
 import com.hexmeet.autotestcases.privatecloud.SignIn
-
+import com.hexmeet.autotestcases.privatecloud.AndroidOp
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 
@@ -21,12 +21,13 @@ import org.junit.runners.Suite
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses([
+//        AndroidOp
 //        AppVersion,
 //        SignIn,
 //        GuestCall,
-        OperateInAGuestCall,
+//        OperateInAGuestCall,
 //        CallAContactInPrivate,
-//        JoinAReserveMeeting,
+        JoinAReserveMeeting,
 //        OperateReserveMeeting,
 //        PostponeMeetingInMeetingControl,
 //        LockMeetingInMeetingControl
