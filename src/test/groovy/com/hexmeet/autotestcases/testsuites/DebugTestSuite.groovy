@@ -27,12 +27,12 @@ import org.junit.runners.Suite
 //        GuestCall,
 //        OperateInAGuestCall,
 //        CallAContactInPrivate,
-        JoinAReserveMeeting,
+//        JoinAReserveMeeting,
 //        OperateReserveMeeting,
 //        PostponeMeetingInMeetingControl,
 //        LockMeetingInMeetingControl
 //        OperateInAReservedMeeting,
-//        JoinMyMeetingInPrivate
+        JoinMyMeetingInPrivate
 ])
 class DebugTestSuite {
 }

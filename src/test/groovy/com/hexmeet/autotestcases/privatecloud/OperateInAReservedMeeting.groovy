@@ -211,6 +211,7 @@ class OperateInAReservedMeeting extends EndpointSystemTestSpec{
         assert true
     }
 
+
     def "共享桌面然后停止"(){
 
         when: "点击分享桌面并分享"
