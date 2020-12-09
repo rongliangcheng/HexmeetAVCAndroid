@@ -39,8 +39,9 @@ public class MyMeetingPage {
         Pause.stop(0.5);
         appiumDriver.findElementByXPath(myMeetingXpathBase+"android.view.View[2]/android.view.View[2]").click();
         Pause.stop(4);
+        appiumDriver.findElementById("com.hexmeet.hjt:id/video_btn").click();
         if(UIElement.byElementIsExist(appiumDriver, By.id("com.hexmeet.hjt:id/input_password"))) {
-            appiumDriver.findElementById("com.hexmeet.hjt:id/input_password").sendKeys("1111");
+            appiumDriver.findElementById("com.hexmeet.hjt:id/input_password").sendKeys("12345");
             appiumDriver.findElementById("com.hexmeet.hjt:id/positiveButton").click();
             Pause.stop(1.5);
             appiumDriver.findElementById("com.hexmeet.hjt:id/input_password").sendKeys(password);

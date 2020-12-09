@@ -21,6 +21,7 @@ import org.junit.runners.Suite
         AndroidOp,
         AppVersion,
         SignIn,
+        JoinMyMeetingInPrivate,
         GuestCall,
         OperateInAGuestCall,
         CallAContactInPrivate,
@@ -28,7 +29,6 @@ import org.junit.runners.Suite
         OperateReserveMeeting,
         PostponeMeetingInMeetingControl,
         LockMeetingInMeetingControl,
-        JoinMyMeetingInPrivate,
         OperateInAReservedMeeting
 ])
 
