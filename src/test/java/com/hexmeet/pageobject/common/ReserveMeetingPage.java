@@ -40,10 +40,11 @@ public class ReserveMeetingPage {
     private final String mute_all               =   meeting_control_base+"android.view.View[2]";
     private final String unmute_all             =   meeting_control_base+"android.view.View[3]";
     private final String meeting_control_more   =   meeting_control_base+"android.view.View[4]/android.view.View[2]";
-    private final String meeting_control_more_base   =   "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[7]/";
+    private final String meeting_control_more_base   =   "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View/android.view.View[7]/android.view.View/";
     private final String allow_user_unmute  =   meeting_control_more_base+"android.view.View[1]";
     private final String mute_when_join     =   meeting_control_more_base+"android.view.View[2]";
     private final String lock_meeting       =   meeting_control_more_base+"android.view.View[3]";
+    private final String unlock_meeting     =   meeting_control_more_base+"android.view.View[3]";
     private final String postpone_meeting   =   meeting_control_more_base+"android.view.View[4]";
     private final String vote_xpath         =   meeting_control_more_base+"android.view.View[5]";
 
@@ -179,7 +180,7 @@ public class ReserveMeetingPage {
     }
 
 
-    public void unlockMeeting(String username){
+    public void lockMeeting(String username){
         logger.info("unlock the meeting");
         findReservedMeeting(username);
         Pause.stop(3);
@@ -188,6 +189,19 @@ public class ReserveMeetingPage {
         appiumDriver.findElementByXPath(meeting_control_more).click();
         Pause.stop(2);
         appiumDriver.findElementByXPath(lock_meeting).click();
+        Pause.stop(2);
+        appiumDriver.findElementByXPath(return_from_meeting_control).click();
+    }
+
+    public void unlockMeeting(String username){
+        logger.info("unlock the meeting");
+        findReservedMeeting(username);
+        Pause.stop(3);
+        goToMeetingControl();
+        Pause.stop(2);
+        appiumDriver.findElementByXPath(meeting_control_more).click();
+        Pause.stop(2);
+        appiumDriver.findElementByXPath(unlock_meeting).click();
         Pause.stop(2);
         appiumDriver.findElementByXPath(return_from_meeting_control).click();
     }

@@ -29,6 +29,7 @@ public class MeetingOperations {
     private final String allow_user_unmute  =   meeting_control_base+"/android.view.View[1]";
     private final String mute_when_join     =   meeting_control_base+"/android.view.View[2]";
     private final String lock_meeting       =   meeting_control_base+"/android.view.View[3]";
+    private final String unlock_meeting     =   meeting_control_base+"/android.view.View[3]";
     private final String postpone_meeting   =   meeting_control_base+"/android.view.View[4]";
     private final String vote_xpath         =   meeting_control_base+"/android.view.View[5]";
 
@@ -234,7 +235,7 @@ public class MeetingOperations {
         Pause.stop(1);
         appiumDriver.findElementByXPath(meeting_control_more).click();
         Pause.stop(0.5);
-        appiumDriver.findElementByXPath(lock_meeting).click();
+        appiumDriver.findElementByXPath(unlock_meeting).click();
         Pause.stop(1);
         appiumDriver.findElementById("com.hexmeet.hjt:id/close_window").click();
     }
