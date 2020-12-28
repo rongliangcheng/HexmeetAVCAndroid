@@ -93,7 +93,8 @@ public class MeetingOperations {
         logger.info("");
         Pause.stop(0.5);
         touchScreenToShowButton();
-        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
+//        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
+        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
         Pause.stop(0.5);
         appiumDriver.findElementById("android:id/button2").click();
     }
@@ -102,7 +103,8 @@ public class MeetingOperations {
         logger.info("");
         Pause.stop(0.5);
         touchScreenToShowButton();
-        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
+//        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
+        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
         Pause.stop(0.5);
         appiumDriver.findElementById("android:id/button1").click();
     }
