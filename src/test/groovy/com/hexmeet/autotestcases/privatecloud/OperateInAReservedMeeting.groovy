@@ -212,32 +212,32 @@ class OperateInAReservedMeeting extends EndpointSystemTestSpec{
     }
 
 
-    def "共享桌面然后停止"(){
-
-        when: "点击分享桌面并分享"
-        LOGGER.info("Share content")
-        meetingOperations.shareContent()
-        Pause.stop(2)
-        showPicInReportPortrait(appiumDriver,"分享桌面")
-
-        and: "停止分享"
-        LOGGER.info("Stop content")
-        meetingOperations.stopContent()
-        Pause.stop(5)
-        showPicInReport(appiumDriver,"停止共享桌面")
-
-        then:"操作成功"
-        assert  true
-    }
-
-    def "共享桌面取消"(){
-        when:"点击共享桌面按钮然后取消"
-        LOGGER.info("Share content and cancel")
-        meetingOperations.shareContentAndCancel()
-
-        then:"操作成功"
-        assert true
-    }
+//    def "共享桌面然后停止"(){
+//
+//        when: "点击分享桌面并分享"
+//        LOGGER.info("Share content")
+//        meetingOperations.shareContent()
+//        Pause.stop(2)
+//        showPicInReportPortrait(appiumDriver,"分享桌面")
+//
+//        and: "停止分享"
+//        LOGGER.info("Stop content")
+//        meetingOperations.stopContent()
+//        Pause.stop(5)
+//        showPicInReport(appiumDriver,"停止共享桌面")
+//
+//        then:"操作成功"
+//        assert  true
+//    }
+//
+//    def "共享桌面取消"(){
+//        when:"点击共享桌面按钮然后取消"
+//        LOGGER.info("Share content and cancel")
+//        meetingOperations.shareContentAndCancel()
+//
+//        then:"操作成功"
+//        assert true
+//    }
 
     def "挂断并结束会议"(){
         when:"挂断并结束会议"
