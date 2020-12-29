@@ -94,9 +94,16 @@ public class MeetingOperations {
         Pause.stop(0.5);
         touchScreenToShowButton();
 //        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
+//        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
+//        Pause.stop(0.5);
+//        appiumDriver.findElementById("android:id/button2").click();
+        Point point = new Point(1076,976);
+        Pause.stop(3);
+        TouchAction touchAction = new TouchAction(appiumDriver);
+        touchAction.press(PointOption.point(point)).release().perform();
         Pause.stop(0.5);
-        appiumDriver.findElementById("android:id/button2").click();
+        point = new Point(835, 750);
+        touchAction.press(PointOption.point(point)).release().perform();
     }
 
     public void shareContent(){
@@ -104,9 +111,15 @@ public class MeetingOperations {
         Pause.stop(0.5);
         touchScreenToShowButton();
 //        appiumDriver.findElementById("com.hexmeet.hjt:id/toolbar_layout_share").click();
-        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
+//        appiumDriver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.LinearLayout[2]/android.widget.LinearLayout[4]").click();
+        Point point = new Point(1076,976);
+        Pause.stop(3);
+        TouchAction touchAction = new TouchAction(appiumDriver);
+        touchAction.press(PointOption.point(point)).release().perform();
         Pause.stop(0.5);
-        appiumDriver.findElementById("android:id/button1").click();
+//        appiumDriver.findElementById("android:id/button1").click();
+        point = new Point(1320, 750);
+        touchAction.press(PointOption.point(point)).release().perform();
     }
 
     public void stopContent(){
