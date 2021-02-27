@@ -9,12 +9,11 @@
   },
   "Android_3": {
     "platformName": "Android",
-    "platformVersion": "7.1.2",
-    "deviceName": "b001c0bf",
-    "appPackage": "com.hexmeet.hjt",
-    "appActivity": ".SplashActivity",
-    "skipServerInstallation": true,
-    "skipDeviceInitialization":true
+    "platformVersion": "9",
+    "deviceName": "c52ab55a",
+    "appPackage": "com.cninnovatel.ev",
+    "appActivity": "com.cninnovatel.ev.SplashActivity",
+    "newCommandTimeout": 900000
   },
   "Android_2": {
     "platformName": "Android",
@@ -33,7 +32,7 @@
     "appPackage": "com.hexmeet.hjt",
     "appActivity": ".SplashActivity"
   },
-  "Android_1_Install": {
+  "Android_3_Install": {
     "deviceId": "564b35554c573398",
     "path":"/Users/apple/Gitlab/Sundae/app/HexMeetHJT-1.4-release.apk",
     "version": "1.4.17"

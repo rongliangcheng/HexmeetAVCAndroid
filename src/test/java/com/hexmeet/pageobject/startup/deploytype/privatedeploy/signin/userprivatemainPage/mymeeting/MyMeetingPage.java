@@ -3,7 +3,6 @@ package com.hexmeet.pageobject.startup.deploytype.privatedeploy.signin.userpriva
 import com.hexmeet.Utility.Pause;
 import com.hexmeet.Utility.UIElement;
 import com.hexmeet.pageobject.startup.deploytype.privatedeploy.signin.userprivatemainPage.UserPrivateMainPage;
-import com.hexmeet.pageobject.startup.deploytype.publicdeploy.signin.userpublicmainpage.publicmeeting.PublicMeeting;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 import org.slf4j.Logger;

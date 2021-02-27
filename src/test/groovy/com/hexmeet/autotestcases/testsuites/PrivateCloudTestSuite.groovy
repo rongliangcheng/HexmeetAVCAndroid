@@ -1,17 +1,15 @@
 package com.hexmeet.autotestcases.testsuites
 
-import com.hexmeet.autotestcases.privatecloud.AndroidOp
-import com.hexmeet.autotestcases.privatecloud.AppVersion
-import com.hexmeet.autotestcases.privatecloud.CallAContactInPrivate
-import com.hexmeet.autotestcases.privatecloud.GuestCall
-import com.hexmeet.autotestcases.privatecloud.JoinAReserveMeeting
-import com.hexmeet.autotestcases.privatecloud.JoinMyMeetingInPrivate
-import com.hexmeet.autotestcases.privatecloud.LockMeetingInMeetingControl
-import com.hexmeet.autotestcases.privatecloud.OperateInAGuestCall
-import com.hexmeet.autotestcases.privatecloud.OperateInAReservedMeeting
-import com.hexmeet.autotestcases.privatecloud.OperateReserveMeeting
-import com.hexmeet.autotestcases.privatecloud.PostponeMeetingInMeetingControl
-import com.hexmeet.autotestcases.privatecloud.SignIn
+import com.hexmeet.autotestcases.signinoperation.AndroidOp
+import com.hexmeet.autotestcases.signinoperation.AppVersion
+import com.hexmeet.autotestcases.signinoperation.CallAContact
+import com.hexmeet.autotestcases.signinoperation.JoinAReserveMeeting
+import com.hexmeet.autotestcases.signinoperation.JoinMyMeetingInPrivate
+import com.hexmeet.autotestcases.signinoperation.LockMeetingInMeetingControl
+import com.hexmeet.autotestcases.signinoperation.OperateInAReservedMeeting
+import com.hexmeet.autotestcases.signinoperation.OperateReserveMeeting
+import com.hexmeet.autotestcases.signinoperation.PostponeMeetingInMeetingControl
+import com.hexmeet.autotestcases.signinoperation.SignIn
 
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
@@ -22,9 +20,7 @@ import org.junit.runners.Suite
         AppVersion,
         SignIn,
         JoinMyMeetingInPrivate,
-        GuestCall,
-        OperateInAGuestCall,
-        CallAContactInPrivate,
+        CallAContact,
         JoinAReserveMeeting,
         OperateReserveMeeting,
         PostponeMeetingInMeetingControl,
@@ -32,5 +28,5 @@ import org.junit.runners.Suite
         OperateInAReservedMeeting
 ])
 
-class PrivateCloudTestSuite {
+class signinoperationTestSuite {
 }

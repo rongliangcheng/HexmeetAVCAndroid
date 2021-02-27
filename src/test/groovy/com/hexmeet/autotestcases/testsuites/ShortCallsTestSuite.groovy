@@ -1,7 +1,7 @@
 package com.hexmeet.autotestcases.testsuites
 
 
-import com.hexmeet.autotestcases.privatecloud.ShortCalls
+import com.hexmeet.autotestcases.signinoperation.ShortCalls
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
 

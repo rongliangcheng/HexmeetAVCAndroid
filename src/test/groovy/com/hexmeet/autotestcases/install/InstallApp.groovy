@@ -42,9 +42,9 @@ class InstallApp extends EndpointSystemTestSpec{
 
         when:
         String path = JsonConfigSingleton.getJsonObjectFromJsonConfig()
-                .getJSONObject("Android_1_Install").getString("path");
+                .getJSONObject("Android_3_Install").getString("path");
         String deviceId = JsonConfigSingleton.getJsonObjectFromJsonConfig()
-                .getJSONObject("Android_1_Install").getString("deviceId");
+                .getJSONObject("Android_3_Install").getString("deviceId");
 
         String execCommand = "adb -s "+deviceId+" install -r "+path;
 
@@ -69,10 +69,10 @@ class InstallApp extends EndpointSystemTestSpec{
     def "Check Version"(){
 
         when:
-        androidEndpoint.initialAppiumEndpoint("Android_1")
+        androidEndpoint.initialAppiumEndpoint("Android_3")
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS)
         String version = JsonConfigSingleton.getJsonObjectFromJsonConfig().
-                getJSONObject("Android_1_Install").getString("version");
+                getJSONObject("Android_3_Install").getString("version");
 
         AppiumDriver driver = androidEndpoint.getAppiumEndpointDriver()
 

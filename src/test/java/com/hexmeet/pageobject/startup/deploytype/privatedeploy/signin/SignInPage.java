@@ -1,8 +1,8 @@
 package com.hexmeet.pageobject.startup.deploytype.privatedeploy.signin;
 
 import com.hexmeet.Utility.Pause;
+import com.hexmeet.Utility.UICommon;
 import com.hexmeet.Utility.UIElement;
-import com.hexmeet.pageobject.common.UICommon;
 import com.hexmeet.pageobject.startup.deploytype.privatedeploy.PrivateDeployPage;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;

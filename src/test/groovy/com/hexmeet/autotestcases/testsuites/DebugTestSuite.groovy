@@ -1,38 +1,22 @@
 package com.hexmeet.autotestcases.testsuites
 
-import com.hexmeet.autotestcases.privatecloud.CallAContactInPrivate
-import com.hexmeet.autotestcases.privatecloud.GuestCall
-import com.hexmeet.autotestcases.privatecloud.JoinAReserveMeeting
-import com.hexmeet.autotestcases.privatecloud.JoinMyMeetingInPrivate
-import com.hexmeet.autotestcases.privatecloud.LockMeetingInMeetingControl
-import com.hexmeet.autotestcases.privatecloud.LongCall
-import com.hexmeet.autotestcases.privatecloud.OperateInAGuestCall
-import com.hexmeet.autotestcases.privatecloud.OperateInAReservedMeeting
-import com.hexmeet.autotestcases.privatecloud.AppVersion
-import com.hexmeet.autotestcases.privatecloud.OperateReserveMeeting
-import com.hexmeet.autotestcases.privatecloud.PostponeMeetingInMeetingControl
-import com.hexmeet.autotestcases.privatecloud.ShortCalls
-import com.hexmeet.autotestcases.privatecloud.SignIn
-import com.hexmeet.autotestcases.privatecloud.AndroidOp
+
 import org.junit.runner.RunWith
 import org.junit.runners.Suite
-
-
+import com.hexmeet.autotestcases.signinoperation.CallAContact
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses([
-//        AndroidOp
+//        AndroidOp,
 //        AppVersion,
 //        SignIn,
-//        GuestCall,
-//        OperateInAGuestCall,
-//        CallAContactInPrivate,
+        CallAContact,
 //        JoinAReserveMeeting,
 //        OperateReserveMeeting,
 //        PostponeMeetingInMeetingControl,
-//        LockMeetingInMeetingControl
+//        LockMeetingInMeetingControl,
 //        OperateInAReservedMeeting,
-        JoinMyMeetingInPrivate
+//        JoinMyMeetingInPrivate
 ])
 class DebugTestSuite {
 }
