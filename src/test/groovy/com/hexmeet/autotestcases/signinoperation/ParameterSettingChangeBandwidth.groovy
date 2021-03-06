@@ -81,7 +81,7 @@ class ParameterSettingChangeBandwidth extends EndpointSystemTestSpec {
     }
 
     @Unroll
-    def "改变带宽#bandwidth"(){
+    def "改变带宽 #bandwidth kbps"(){
 
         when:"设置带宽"
         PageNavigation pageNavigation = new PageNavigation(appiumDriver)

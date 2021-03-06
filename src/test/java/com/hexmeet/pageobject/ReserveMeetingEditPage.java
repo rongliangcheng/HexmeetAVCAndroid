@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import static org.slf4j.LoggerFactory.getLogger;
 
+@SuppressWarnings("unchecked")
 public class ReserveMeetingEditPage {
     AppiumDriver appiumDriver;
     private Logger log = getLogger(this.getClass().getName());
