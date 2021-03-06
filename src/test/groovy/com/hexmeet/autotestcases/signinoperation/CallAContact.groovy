@@ -84,6 +84,7 @@ class CallAContact extends EndpointSystemTestSpec{
         ContactOperations contactOperations = new ContactOperations(appiumDriver)
         contactOperations.call_contact(CallType.VideoCall)
         Pause.stop(20)
+        showPicInReport(appiumDriver,"视频呼叫用户")
 
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
         boolean inMeeting = meetingOperations.isInMeeting()
@@ -122,6 +123,7 @@ class CallAContact extends EndpointSystemTestSpec{
         ContactOperations contactOperations = new ContactOperations(appiumDriver)
         contactOperations.call_contact(CallType.AudioCall)
         Pause.stop(20)
+        showPicInReport(appiumDriver,"音频呼叫用户")
 
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
         boolean inAudioMeeting = audioMeetingOperations.isInAudioMeeting()

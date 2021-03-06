@@ -86,6 +86,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(dial_str,CallType.VideoCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"以视频拨带密码的会议")
 
         and:"静音/解除静音"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
@@ -143,6 +145,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(dial_str,CallType.AudioCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"以音频拨带密码的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -194,6 +198,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(conference_num,CallType.VideoCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"以视频拨不带密码的会议")
 
         and:"静音/解除静音"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
@@ -249,6 +255,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(conference_num,CallType.AudioCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"以音频拨不带密码的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)

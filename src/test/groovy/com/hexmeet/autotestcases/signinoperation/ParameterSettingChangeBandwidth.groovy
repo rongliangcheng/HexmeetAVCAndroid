@@ -105,6 +105,9 @@ class ParameterSettingChangeBandwidth extends EndpointSystemTestSpec {
             reserveMeetingDetailOperations.start_meeting(CallType.VideoCall)
         }
 
+        Pause.stop(4)
+        showPicInReport(appiumDriver,bandwidth)
+
 
         and:"检查媒体信息"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)

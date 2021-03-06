@@ -104,7 +104,7 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        and:"以hexautotest6/123456/port 80登录"
+        and:"以hexautotest6/123456/port 443登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
         loginOperations.login_with_port_and_accept_access_permission(rcm_server,userName,password,PORT)
 
@@ -195,36 +195,37 @@ class SignIn extends EndpointSystemTestSpec{
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第3次")
 
-        and:"以hexautotest6/12345 登录 第4次"
-        Pause.stop(5)
-        loginOperations.login_only(rcm_server,userName,password)
-        Pause.stop(0.6)
-        showPicInReportPortrait(appiumDriver,"密码错误第4次")
-
-        and:"以hexautotest6/12345 登录 第5次"
-        Pause.stop(5)
-        loginOperations.login_only(rcm_server,userName,password)
-        Pause.stop(0.6)
-        showPicInReportPortrait(appiumDriver,"密码错误第5次")
-
-        and:"以hexautotest6/123456 正常登录 第1次"
-        Pause.stop(5)
-        loginOperations.login_only(rcm_server,userName,password)
-        Pause.stop(0.6)
-        showPicInReportPortrait(appiumDriver,"账号被锁5分钟")
-
+//        and:"以hexautotest6/12345 登录 第4次"
+//        Pause.stop(5)
+//        loginOperations.login_only(rcm_server,userName,password)
+//        Pause.stop(0.6)
+//        showPicInReportPortrait(appiumDriver,"密码错误第4次")
+//
+//        and:"以hexautotest6/12345 登录 第5次"
+//        Pause.stop(5)
+//        loginOperations.login_only(rcm_server,userName,password)
+//        Pause.stop(0.6)
+//        showPicInReportPortrait(appiumDriver,"密码错误第5次")
+//
+//        and:"以hexautotest6/123456 正常登录 第1次"
+//        Pause.stop(5)
+//        loginOperations.login_only(rcm_server,userName,password)
+//        Pause.stop(0.6)
+//        showPicInReportPortrait(appiumDriver,"账号被锁5分钟")
+//
         LoginPage loginPage = new LoginPage(appiumDriver)
         boolean isOnLoginPage = loginPage.isOnLoginPage()
 
-        and:"等待5分钟"
-        Pause.stop(300)
+//        and:"等待5分钟"
+//        Pause.stop(300)
 
         then:"6次失败"
         assert isOnLoginPage
     }
 
 //    @Retry
-    def "用户密码错误登录5次被锁后5分钟正常登录"(){
+//    def "用户密码错误登录5次被锁后5分钟正常登录"(){
+    def "用户密码错误登录3次后正常登录"(){
         when:"初始化AppiumDriver"
         androidEndpoint.initialAppiumEndpointfromJson(configFileName,androidKeyword_1)
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)

@@ -112,6 +112,8 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         conferenceTabOperations.reserved_meeting_info()
         ReserveMeetingEditOperations reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.VideoCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"创建预约会议并视频入会")
 
         and:"静音/解除静音"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
@@ -164,6 +166,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         ReserveMeetingEditOperations reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.VideoCall)
 
+
         and:"挂断会议"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
         meetingOperations.hangup_call()
@@ -173,6 +176,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         ReserveMeetingDetailOperations reserveMeetingDetailOperations = new ReserveMeetingDetailOperations(appiumDriver)
         reserveMeetingDetailOperations.start_meeting(CallType.VideoCall)
         Pause.stop(15)
+        showPicInReport(appiumDriver,"挂断会议后视频入会")
 
         and:"挂断会议"
         meetingOperations = new MeetingOperations(appiumDriver)
@@ -182,6 +186,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         reserveMeetingDetailOperations = new ReserveMeetingDetailOperations(appiumDriver)
         reserveMeetingDetailOperations.start_meeting(CallType.AudioCall)
         Pause.stop(15)
+        showPicInReport(appiumDriver,"挂断会议后音频入会")
 
         and:"挂断会议"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -221,6 +226,8 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         conferenceTabOperations.reserved_meeting_info()
         ReserveMeetingEditOperations reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.AudioCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"创建预约会议并音频入会")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -278,6 +285,8 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         conferenceTabOperations.reserved_meeting_info()
         reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.VideoCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"修改预约会议并视频入会")
 
         and:"静音/解除静音"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)

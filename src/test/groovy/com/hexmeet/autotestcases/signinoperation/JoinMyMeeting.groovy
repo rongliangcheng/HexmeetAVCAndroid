@@ -80,6 +80,8 @@ class JoinMyMeeting extends EndpointSystemTestSpec{
 
         MyMeetingRoomOperations myMeetingRoomOperations = new MyMeetingRoomOperations(appiumDriver)
         myMeetingRoomOperations.start_call(CallType.VideoCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"视频加入我的会议")
 
         and:"静音/解除静音"
         MeetingOperations meetingOperations = new MeetingOperations(appiumDriver)
@@ -126,6 +128,8 @@ class JoinMyMeeting extends EndpointSystemTestSpec{
 
         MyMeetingRoomOperations myMeetingRoomOperations = new MyMeetingRoomOperations(appiumDriver)
         myMeetingRoomOperations.start_call(CallType.AudioCall)
+        Pause.stop(4)
+        showPicInReport(appiumDriver,"音频加入我的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)

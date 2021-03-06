@@ -73,6 +73,9 @@ class PersonalInfoOperate extends EndpointSystemTestSpec {
         PersonalInfoOperations personalInfoOperations = new PersonalInfoOperations(appiumDriver)
         personalInfoOperations.changeImage()
 
+        Pause.stop(4)
+        showPicInReportPortrait(appiumDriver,"更换头像")
+
         then:"操作成功"
         assert  true
 
@@ -100,6 +103,8 @@ class PersonalInfoOperate extends EndpointSystemTestSpec {
 
         Pause.stop(2)
         String str2=personalInfoOperations.change_display_name("!@#\$%^&*()_{}<>?123dwer")
+        Pause.stop(2)
+        showPicInReportPortrait(appiumDriver,"更改名字")
 
         Pause.stop(2)
         String str3=personalInfoOperations.change_display_name("hexautotest6")
