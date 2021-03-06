@@ -55,7 +55,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
     }
 
-    def "以视频拨带密码的会议"(){
+    def "以视频拨带密码的会议并执行静音/关闭摄像头/切换摄像头"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -86,7 +86,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(dial_str,CallType.VideoCall)
-        Pause.stop(4)
+        Pause.stop(10)
         showPicInReport(appiumDriver,"以视频拨带密码的会议")
 
         and:"静音/解除静音"
@@ -114,7 +114,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
     }
 
 
-    def "以音频拨带密码的会议"(){
+    def "以音频拨带密码的会议并执行静音/切换扬声器"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -145,8 +145,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(dial_str,CallType.AudioCall)
-        Pause.stop(4)
-        showPicInReport(appiumDriver,"以音频拨带密码的会议")
+        Pause.stop(10)
+        showPicInReportPortrait(appiumDriver,"以音频拨带密码的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -169,7 +169,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
     }
 
-    def "以视频拨不带密码的会议"(){
+    def "以视频拨不带密码的会议并执行静音/关闭摄像头/切换摄像头"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -198,7 +198,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(conference_num,CallType.VideoCall)
-        Pause.stop(4)
+        Pause.stop(10)
         showPicInReport(appiumDriver,"以视频拨不带密码的会议")
 
         and:"静音/解除静音"
@@ -226,7 +226,7 @@ class DialPadOperate extends EndpointSystemTestSpec {
     }
 
 
-    def "以音频拨不带密码的会议"(){
+    def "以音频拨不带密码的会议并执行静音/切换扬声器"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -255,8 +255,8 @@ class DialPadOperate extends EndpointSystemTestSpec {
 
         DialPadOperations dialPadOperations = new DialPadOperations(appiumDriver)
         dialPadOperations.start_meeting(conference_num,CallType.AudioCall)
-        Pause.stop(4)
-        showPicInReport(appiumDriver,"以音频拨不带密码的会议")
+        Pause.stop(10)
+        showPicInReportPortrait(appiumDriver,"以音频拨不带密码的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)

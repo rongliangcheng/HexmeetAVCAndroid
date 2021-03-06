@@ -88,7 +88,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
 
     }
 
-    def "创建预约会议并视频入会"(){
+    def "创建预约会议并视频入会并执行静音/关闭摄像头/切换摄像头"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -141,7 +141,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
 
 
 
-    def "创建预约会议,视频入会,挂断后再次音视频入会"(){
+    def "创建预约会议,视频入会,挂断后再次音视频入会并执行静音/切换扬声器"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -186,7 +186,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         reserveMeetingDetailOperations = new ReserveMeetingDetailOperations(appiumDriver)
         reserveMeetingDetailOperations.start_meeting(CallType.AudioCall)
         Pause.stop(15)
-        showPicInReport(appiumDriver,"挂断会议后音频入会")
+        showPicInReportPortrait(appiumDriver,"挂断会议后音频入会")
 
         and:"挂断会议"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -202,7 +202,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
 
     }
 
-    def "创建预约会议并音频入会"(){
+    def "创建预约会议并音频入会并执行静音/切换扬声器"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
@@ -227,7 +227,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         ReserveMeetingEditOperations reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.AudioCall)
         Pause.stop(4)
-        showPicInReport(appiumDriver,"创建预约会议并音频入会")
+        showPicInReportPortrait(appiumDriver,"创建预约会议并音频入会")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
@@ -251,7 +251,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
     }
 
 
-    def "创建预约会议并修改会议信息后入会"(){
+    def "创建预约会议并修改会议信息后入会并执行静音/关闭摄像头/切换摄像头"(){
 
         when:"清除已经存在的会议"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")

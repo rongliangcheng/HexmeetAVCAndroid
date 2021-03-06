@@ -67,7 +67,7 @@ class CallAContact extends EndpointSystemTestSpec{
     }
 
 //    @Retry(delay = 30000)
-    def "视频呼叫组织架构中的用户"(){
+    def "视频呼叫组织架构中的用户并执行静音/关闭摄像头/切换摄像头"(){
         given:"初始化"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
@@ -106,7 +106,7 @@ class CallAContact extends EndpointSystemTestSpec{
     }
 
 
-    def "音频呼叫组织架构中的用户"(){
+    def "音频呼叫组织架构中的用户并执行静音/切换扬声器"(){
         given:"初始化"
         androidEndpoint.initialAppiumEndpointfromJson("config.json","Android_3")
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS)
@@ -123,7 +123,7 @@ class CallAContact extends EndpointSystemTestSpec{
         ContactOperations contactOperations = new ContactOperations(appiumDriver)
         contactOperations.call_contact(CallType.AudioCall)
         Pause.stop(20)
-        showPicInReport(appiumDriver,"音频呼叫用户")
+        showPicInReportPortrait(appiumDriver,"音频呼叫用户")
 
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)
         boolean inAudioMeeting = audioMeetingOperations.isInAudioMeeting()

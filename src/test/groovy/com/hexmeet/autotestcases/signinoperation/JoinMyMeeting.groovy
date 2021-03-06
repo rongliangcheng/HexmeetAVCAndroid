@@ -60,7 +60,7 @@ class JoinMyMeeting extends EndpointSystemTestSpec{
 
     }
 
-    def "视频加入我的会议"(){
+    def "视频加入我的会议并执行静音/关闭摄像头/切换摄像头"(){
 
 
         when: "初始化"
@@ -108,7 +108,7 @@ class JoinMyMeeting extends EndpointSystemTestSpec{
     }
 
 
-    def "音频加入我的会议"(){
+    def "音频加入我的会议并执行静音/切换扬声器"(){
 
 
         when: "初始化"
@@ -128,8 +128,8 @@ class JoinMyMeeting extends EndpointSystemTestSpec{
 
         MyMeetingRoomOperations myMeetingRoomOperations = new MyMeetingRoomOperations(appiumDriver)
         myMeetingRoomOperations.start_call(CallType.AudioCall)
-        Pause.stop(4)
-        showPicInReport(appiumDriver,"音频加入我的会议")
+        Pause.stop(10)
+        showPicInReportPortrait(appiumDriver,"音频加入我的会议")
 
         and:"静音/解除静音"
         AudioMeetingOperations audioMeetingOperations = new AudioMeetingOperations(appiumDriver)

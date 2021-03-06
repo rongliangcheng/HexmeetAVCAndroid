@@ -169,7 +169,7 @@ class SignIn extends EndpointSystemTestSpec{
     }
 
 
-    def "用户密码错误登录5次被锁"(){
+    def "用户密码错误登录3次"(){
         when:"初始化AppiumDriver"
         androidEndpoint.initialAppiumEndpointfromJson(configFileName,androidKeyword_1)
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
@@ -219,7 +219,7 @@ class SignIn extends EndpointSystemTestSpec{
 //        and:"等待5分钟"
 //        Pause.stop(300)
 
-        then:"6次失败"
+        then:"3次失败"
         assert isOnLoginPage
     }
 
