@@ -45,7 +45,7 @@ class SignIn extends EndpointSystemTestSpec{
     String androidKeyword_1 = "Android_3"
 
     @Shared
-    String rcm_server = "172.25.0.213"
+    String rcm_server = "hexmeet"
 
     @Shared
     String PORT = "443"
@@ -82,19 +82,12 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
-
-
 
         and:"以hexautotest6/123456登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
-        loginOperations.login(rcm_server,userName,password)
+        loginOperations.login_and_accept_access_permission(rcm_server,userName,password)
 
-        Pause.stop(4)
-        UICommon.devicePermissionAllowanceAfterLogin(appiumDriver);
-        Pause.stop(1)
+        Pause.stop(5)
         showPicInReportPortrait(appiumDriver,"登录界面")
 
         ConferenceTabPage conferenceTabPage = new ConferenceTabPage(appiumDriver)
@@ -112,18 +105,11 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
-
-        and:"以hjtautotest3/123456/port 80登录"
+        and:"以hexautotest6/123456/port 80登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
-        loginOperations.login_with_port(rcm_server,userName,password,PORT)
+        loginOperations.login_with_port_and_accept_access_permission(rcm_server,userName,password,PORT)
 
         Pause.stop(4)
-
-        UICommon.devicePermissionAllowanceAfterLogin(appiumDriver);
-        Pause.stop(1)
         showPicInReportPortrait(appiumDriver,"登录界面")
 
         ConferenceTabPage conferenceTabPage = new ConferenceTabPage(appiumDriver)
@@ -141,11 +127,7 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
-
-        and:"以hjtautotest3/123456/port 8000登录"
+        and:"以hexautotest6/123456/port 8000登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
         loginOperations.login_with_port(rcm_server,userName,password,"8000")
 
@@ -168,9 +150,6 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
 
         and:"以hjtautotest/123456/port 80登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
@@ -197,11 +176,7 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
-
-        and:"以hjtautotest3/12345 登录 第1次"
+        and:"以hexautotest6/12345 登录 第1次"
         String password="12345"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
         loginOperations.login(rcm_server,userName,password)
@@ -209,28 +184,33 @@ class SignIn extends EndpointSystemTestSpec{
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第1次")
 
-        and:"以hjtautotest3/12345 登录 第2次"
-        loginOperations.login(rcm_server,userName,password)
+        and:"以hexautotest6/12345 登录 第2次"
+        Pause.stop(5)
+        loginOperations.login_only(rcm_server,userName,password)
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第2次")
 
-        and:"以hjtautotest3/12345 登录 第3次"
-        loginOperations.login(rcm_server,userName,password)
+        and:"以hexautotest6/12345 登录 第3次"
+        Pause.stop(5)
+        loginOperations.login_only(rcm_server,userName,password)
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第3次")
 
-        and:"以hjtautotest3/12345 登录 第4次"
-        loginOperations.login(rcm_server,userName,password)
+        and:"以hexautotest6/12345 登录 第4次"
+        Pause.stop(5)
+        loginOperations.login_only(rcm_server,userName,password)
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第4次")
 
-        and:"以hjtautotest3/12345 登录 第5次"
-        loginOperations.login(rcm_server,userName,password)
+        and:"以hexautotest6/12345 登录 第5次"
+        Pause.stop(5)
+        loginOperations.login_only(rcm_server,userName,password)
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"密码错误第5次")
 
-        and:"以hjtautotest3/123456 正常登录 第1次"
-        loginOperations.login(rcm_server,userName,password)
+        and:"以hexautotest6/123456 正常登录 第1次"
+        Pause.stop(5)
+        loginOperations.login_only(rcm_server,userName,password)
         Pause.stop(0.6)
         showPicInReportPortrait(appiumDriver,"账号被锁5分钟")
 
@@ -250,18 +230,11 @@ class SignIn extends EndpointSystemTestSpec{
         androidEndpoint.initialAppiumEndpointfromJson(configFileName,androidKeyword_1)
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(IMPLICIT_WAIT_TIME, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
+        
 
-        PrivacyPolicyOperations privacyPolicyOperations = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperations.ok()
-        UICommon.devicePermissionAllowance(appiumDriver)
-
-        and:"以hjtautotest3/123456登录"
+        and:"以hexautotest6/123456登录"
         LoginOperations  loginOperations = new LoginOperations(appiumDriver)
-        loginOperations.login(rcm_server,userName,password)
-
-        Pause.stop(4)
-
-        UICommon.devicePermissionAllowanceAfterLogin(appiumDriver);
+        loginOperations.login_and_accept_access_permission(rcm_server,userName,password)
 
         Pause.stop(4)
         showPicInReportPortrait(appiumDriver,"登录界面")

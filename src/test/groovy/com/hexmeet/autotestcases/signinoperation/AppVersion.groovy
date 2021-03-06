@@ -33,7 +33,7 @@ class AppVersion extends EndpointSystemTestSpec{
     Logger log = LoggerFactory.getLogger(this.getClass())
 
     @Shared
-    String server_addr="172.25.0.213"
+    String server_addr="hexmeet"
 
     @Shared
     String username="hexautotest6"
@@ -55,15 +55,9 @@ class AppVersion extends EndpointSystemTestSpec{
         androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS)
         appiumDriver = androidEndpoint.getAppiumEndpointDriver()
         sleep(9)
-        PrivacyPolicyOperations privacyPolicyOperation = new PrivacyPolicyOperations(appiumDriver)
-        privacyPolicyOperation.ok()
-
-        UICommon.devicePermissionAllowance(appiumDriver)
-
         LoginOperations loginOperations = new LoginOperations(appiumDriver)
-        loginOperations.login(server_addr,username,password)
+        loginOperations.login_and_accept_access_permission(server_addr,username,password)
 
-        UICommon.devicePermissionAllowanceAfterLogin(appiumDriver)
     }
 
     def cleanupSpec(){
@@ -108,14 +102,9 @@ class AppVersion extends EndpointSystemTestSpec{
             androidEndpoint.getAppiumEndpointDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS)
             appiumDriver = androidEndpoint.getAppiumEndpointDriver()
             sleep(3)
-            PrivacyPolicyOperations privacyPolicyOperation = new PrivacyPolicyOperations(appiumDriver)
-            privacyPolicyOperation.ok()
-            UICommon.devicePermissionAllowance(appiumDriver)
 
             LoginOperations loginOperations = new LoginOperations(appiumDriver)
-            loginOperations.login(server_addr,username,password)
-
-            UICommon.devicePermissionAllowanceAfterLogin(appiumDriver)
+            loginOperations.login_and_accept_access_permission(server_addr,username,password)
 
             pageNavigation = new PageNavigation(appiumDriver)
             pageNavigation.to_me_tab_page()
