@@ -73,7 +73,7 @@ task testDebug(type: Test) {
 task testBAT(type: Test) {
 
     filter {
-        include '**/PrivateCloudTestSuite.class'
+        include '**/BATTestSuite.class'
     }
 
     systemProperty 'com.athaydes.spockframework.report.internal.HtmlReportCreator.specSummaryNameOption','title'
