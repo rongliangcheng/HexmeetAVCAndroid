@@ -102,6 +102,7 @@ public class ReserveMeetingPage {
 
     public void back_after_reserve_confirm(){
         log.info("back_after_reserve_confirm");
+        Pause.stop(2);
         appiumDriver.findElementById(back_after_reserve_id).click();
     }
 
