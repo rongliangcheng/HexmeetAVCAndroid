@@ -112,7 +112,7 @@ class ReserveMeetingOperate extends EndpointSystemTestSpec {
         conferenceTabOperations.reserved_meeting_info()
         ReserveMeetingEditOperations reserveMeetingEditOperations = new ReserveMeetingEditOperations(appiumDriver)
         reserveMeetingEditOperations.start_meeting_now_and_confirm(CallType.VideoCall)
-        Pause.stop(4)
+        Pause.stop(10)
         showPicInReport(appiumDriver,"创建预约会议并视频入会")
 
         and:"静音/解除静音"

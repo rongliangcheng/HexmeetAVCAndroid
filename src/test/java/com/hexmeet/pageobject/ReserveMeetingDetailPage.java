@@ -55,7 +55,7 @@ public class ReserveMeetingDetailPage {
 
     public void back_to_conference_tab_page(){
         log.info("");
-        Pause.stop(1);
+        Pause.stop(2.5);
         appiumDriver.findElementById(back_id).click();
     }
 
