@@ -16,7 +16,7 @@ import spock.lang.Title
 
 import java.util.concurrent.TimeUnit
 
-@Title("加入预约会议")
+@Title("改变设置")
 @Narrative("创建预约会议并加入，邀请别的用户")
 @Retry(delay=20000)
 

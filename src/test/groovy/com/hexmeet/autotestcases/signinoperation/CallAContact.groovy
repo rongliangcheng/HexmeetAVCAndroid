@@ -21,7 +21,7 @@ import spock.lang.Title
 import java.util.concurrent.TimeUnit
 
 
-@Title("从通讯录中呼叫")
+@Title("从通讯录中呼叫用户")
 @Narrative("从通信录中找到用户并呼叫")
 
 class CallAContact extends EndpointSystemTestSpec{
